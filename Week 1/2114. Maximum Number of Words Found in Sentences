@@ -1,0 +1,15 @@
+2114. Maximum Number of Words Found in Sentences
+----------------------------------------------
+Time Complexity:
+----------------------------
+Code:
+-----------------------
+
+class Solution:
+    def mostWordsFound(self, sentences: List[str]) -> int:
+        b = []
+        for i in sentences:
+            a = i.split()
+            length = len(a)
+            b.append(length)
+        return max(b)
