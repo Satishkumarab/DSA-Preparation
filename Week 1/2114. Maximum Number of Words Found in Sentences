@@ -1,6 +1,6 @@
 2114. Maximum Number of Words Found in Sentences
 ----------------------------------------------
-Time Complexity:
+Time Complexity: O(n)
 ----------------------------
 Code:
 -----------------------
