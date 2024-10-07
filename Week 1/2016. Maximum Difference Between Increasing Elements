@@ -1,0 +1,22 @@
+2016. Maximum Difference Between Increasing Elements :
+---------------------------------------------
+TimeComplexity:
+-----------------------------
+Code:
+----------------------------------
+class Solution:
+    def maximumDifference(self, nums: List[int]) -> int:
+        i = 0
+        j = 1
+        maxdiff = 0
+        ans = -1
+        while j <len(nums):
+            if nums[i] < nums[j]:
+                minval = min(nums[:j])
+                maxdiff = nums[j]-minval
+                ans = max(maxdiff,ans)
+            i = j
+            j+=1
+        return ans
+
+
