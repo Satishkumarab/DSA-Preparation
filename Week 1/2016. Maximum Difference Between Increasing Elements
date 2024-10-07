@@ -1,6 +1,6 @@
 2016. Maximum Difference Between Increasing Elements :
 ---------------------------------------------
-TimeComplexity:
+TimeComplexity: O(n^2)
 -----------------------------
 Code:
 ----------------------------------
