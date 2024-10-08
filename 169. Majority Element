@@ -1,0 +1,21 @@
+169. Majority Element :
+-----------------------------------
+Time Complexity: O(n)
+-----------------------------
+Code:
+----------------------------
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        dici = {}
+        for i in nums:
+            if i in dici:
+                dici[i] += 1
+            else:
+                dici[i] = 1
+        for j in dici:
+            if dici[j] > len(nums)/2:
+                b = j
+                break
+            
+        return b
+
