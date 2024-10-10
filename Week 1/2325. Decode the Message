@@ -1,6 +1,6 @@
 2325. Decode the Message :
 -----------------------------------
-TimeComplexity:
+TimeComplexity:  O(n)
 ------------------------------
 Code:
 class Solution:
