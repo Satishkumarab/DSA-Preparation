@@ -1,0 +1,23 @@
+645. Set Mismatch :
+Time complexity: O(n)
+Code:
+class Solution:
+    def findErrorNums(self, nums: List[int]) -> List[int]:
+        length = len(nums)
+        setA = set()
+        duplicate = -1
+        missing = -1
+
+        for i in range(length):
+            val = nums[i]
+            if val not in setA:
+                setA.add(val)
+            else:
+                duplicate = val
+        
+        for i in range(1,length+1):
+            if i not in setA:
+                missing = i
+
+        return [duplicate,missing]
+
