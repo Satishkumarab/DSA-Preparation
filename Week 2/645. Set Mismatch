@@ -1,6 +1,9 @@
 645. Set Mismatch :
+--------------------------------
 Time complexity: O(n)
+--------------------------------
 Code:
+--------------------------------
 class Solution:
     def findErrorNums(self, nums: List[int]) -> List[int]:
         length = len(nums)
