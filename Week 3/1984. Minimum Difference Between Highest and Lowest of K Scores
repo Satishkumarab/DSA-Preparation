@@ -1,1 +1,26 @@
+1984. Minimum Difference Between Highest and Lowest of K Scores :
+---------------------------------------------------------
+TimeComplexity- psudo-code: O(n^3)
+------------------------------------------------
+PsudoCode:
+-------------------------------------------
+class Solution:
+    def minimumDifference(self, nums: List[int], k: int) -> int:
+
+        nums.sort()
+        ans = float("inf")
+        n = len(nums)
+        for i in range(n):
+            for j in range(i+1,n):
+                c = nums[i:j+1]
+                if len(c) == k:
+
+                    mini = min(c)
+                    maxi = max(c)
+                    diffi = maxi - mini
+                    ans = min(diffi,ans)
+            if (ans == float("inf")):
+                ans = 0       
+        return (ans)
+
 
