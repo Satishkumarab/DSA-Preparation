@@ -22,5 +22,27 @@ class Solution:
             if (ans == float("inf")):
                 ans = 0       
         return (ans)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Main-Code:
+---------------------------------------
+Main -Code-Timecomplexity : O(n.log.n)
+----------------------------------------------
+Code:
+----------------------------------------
+class Solution:
+    def minimumDifference(self, nums: List[int], k: int) -> int:
+        nums.sort()  ------->>>>>(n.log.n)
+        ans = float("inf")
+        n = len(nums)
+        l = 0
+        for r in range(n):
+            if (r-l) == k:
+                l += 1
+            if (r-l+1 == k):
+                ans = min(ans,nums[r]-nums[l])
+
+        return ans
+
 
 
