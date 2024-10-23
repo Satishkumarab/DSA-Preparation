@@ -1,0 +1,21 @@
+2144. Minimum Cost of Buying Candies With Discount :
+--------------------------------------------------------------
+TimeComplexity : O(n)
+---------------------------------------------------------------
+Main-Code:
+-----------------------------------------------------------------
+class Solution:
+    def minimumCost(self, cost: List[int]) -> int:
+        took = 0
+        ans = 0
+        cost.sort()
+        for i in range(len(cost)-1,-1,-1):
+            if took != 2:
+                ans += cost[i]
+                took+=1
+            else:
+                took = 0
+        return ans
+        
+
+
