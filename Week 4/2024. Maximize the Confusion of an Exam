@@ -1,0 +1,26 @@
+2024. Maximize the Confusion of an Exam :
+TimeComplexity: O(n)
+Code:
+class Solution:
+    def maxConsecutiveAnswers(self, answerKey: str, k: int) -> int:
+        l = 0
+        ans = 0
+        countT = 0
+        countF = 0
+        n = len(answerKey)
+
+        for r in range(n):
+            if answerKey[r] == "T":
+                countT += 1
+            else:
+                countF += 1
+            while min(countT,countF) > k:
+                if answerKey[l] == "T":
+                    countT -= 1
+                else:
+                    countF -= 1
+                l+=1
+            ans = max(ans,r-l+1)
+
+        return ans
+
