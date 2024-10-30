@@ -12,6 +12,30 @@ class Solution:
         n = len(s)
         
         for r in range(n):
+            ch = s[r]
+            if ch not in set_a :
+                set_a.add(s[r])
+            else:
+                while ch in set_a :
+                    set_a.remove(s[l])
+                    l += 1
+                set_a.add(ch)
+
+            ans = max(ans,r-l+1)
+
+        return ans
+
+
+Another solution also imp:
+----------------------------------------------------------------------------------------------------
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        set_a = set()
+        l = 0
+        ans = 0
+        n = len(s)
+        
+        for r in range(n):
             while s[r] in set_a:
                 set_a.remove(s[l])
                 l += 1
