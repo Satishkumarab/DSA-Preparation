@@ -1,0 +1,31 @@
+904. Fruit Into Baskets :
+---------------------------------------
+TimeComplexity : O(n)
+---------------------------------------
+Main-Code :
+----------------------------------------
+class Solution:
+    def totalFruit(self, fruits: List[int]) -> int:
+        l = 0
+        ans = 0
+        dici = {}
+        
+        for r in range(len(fruits)):
+            value = fruits[r]
+            if value in dici:
+                dici[value] += 1
+            else:
+                dici[value] = 1
+            while len(dici)>2:
+                left_value = fruits[l]
+                dici[left_value] -= 1
+                if dici[left_value] == 0:
+                    dici.pop(left_value)
+
+                l +=1
+            
+            ans = max(ans,r-l+1)
+        return ans
+        
+
+
