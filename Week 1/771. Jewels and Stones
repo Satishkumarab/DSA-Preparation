@@ -1,9 +1,12 @@
-Time Complexity: O(n)
+Time Complexity: O(N+M) = O(N)
+-------------------------------
 Code:
+-------------------------------
 class Solution:
     def numJewelsInStones(self, jewels: str, stones: str) -> int:
         count = 0
-        for i in stones:
-            if i in jewels:
+        jewels_set = set(jewels)
+        for stone in stones:
+            if stone in jewels_set:   #Searching in Hash table (set) Time Complexity is O(1) but in strings O(N).
                 count += 1
         return count
