@@ -6,6 +6,23 @@ Code:
 ----------------------------------
 class Solution:
     def maximumDifference(self, nums: List[int]) -> int:
+        l = 0
+        ans = -1
+        for r in range(1,len(nums)):
+            if nums[r] > nums[l]:
+                difference = nums[r] - nums[l]
+                ans = max(ans,difference)
+            else:
+                l = r
+
+        return(ans)
+
+
+
+Another Solution TimeComplexity: O(n^2)
+-------------------------------
+class Solution:
+    def maximumDifference(self, nums: List[int]) -> int:
         i = 0
         j = 1
         maxdiff = 0
