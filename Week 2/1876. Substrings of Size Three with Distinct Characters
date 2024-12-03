@@ -17,8 +17,28 @@ class Solution:
 
 Main-Code-TimeComplexity : O(n)
 ------------------------------------------
-Main-Code :
+Main-Code : 01 (Priority)
 --------------------------------------
+
+class Solution:
+    def countGoodSubstrings(self, s: str) -> int:
+        n = len(s)
+        count = 0
+        l = 0
+        for r in range(n):
+            if (r-l+1 == 4):
+                l += 1
+            if (r-l+1 == 3) and (s[l] !=s[r] and s[r] != s[l+1] and s[l+1] != s[l]):
+                count = count+1
+            
+        return count
+
+
+
+Main-Code : 02 (Priority)
+-------------------------------
+TimeComplexity : O(N)
+---------------------------
 class Solution:
     def countGoodSubstrings(self, s: str) -> int:
         n = len(s)
