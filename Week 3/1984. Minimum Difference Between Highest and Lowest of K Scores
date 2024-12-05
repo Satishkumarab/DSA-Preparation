@@ -2,7 +2,7 @@
 ---------------------------------------------------------
 TimeComplexity- psudo-code: O(n^3)
 ------------------------------------------------
-PsudoCode:
+Brute-Force Code:
 -------------------------------------------
 class Solution:
     def minimumDifference(self, nums: List[int], k: int) -> int:
