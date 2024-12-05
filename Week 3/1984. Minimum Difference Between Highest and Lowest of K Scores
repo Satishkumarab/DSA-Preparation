@@ -19,6 +19,7 @@ class Solution:
                     maxi = max(c)
                     diffi = maxi - mini
                     ans = min(diffi,ans)
+                    break
             if (ans == float("inf")):
                 ans = 0       
         return (ans)
