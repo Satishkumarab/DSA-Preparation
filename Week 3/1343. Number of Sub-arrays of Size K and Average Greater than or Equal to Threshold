@@ -2,8 +2,34 @@
 ----------------------------------------------------------------------------------------
 TimeComplexity : O(n)
 -----------------------------------------------------------------------
-Code :
+BruteForce-Code : (TimeLimit Exceeds)
 -------------------------------------------------------------------------
+
+class Solution:
+    def numOfSubarrays(self, arr: List[int], k: int, threshold: int) -> int:
+        count = 0
+        avg =0
+        new_array= []
+        summ = 0
+        n = len(arr)
+        for i in range (len(arr)):
+            summ = summ+arr[i]
+            new_array.append(arr[i])
+            if len(new_array) == k+1:
+                new_array.pop(0)
+            if len(new_array) == k:
+                summ = sum(new_array)
+                avg = summ // k
+                if avg >= threshold :
+                    count+=1
+            
+
+        return(count)
+
+
+Main-Code :
+----------------------------------
+
 class Solution:
     def numOfSubarrays(self, arr: List[int], k: int, threshold: int) -> int:
         count = 0
