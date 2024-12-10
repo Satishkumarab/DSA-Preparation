@@ -2,7 +2,7 @@
 ------------------------------------------------------
 TimeComplexity : O(n)
 -------------------------------------------
-Code:
+Code: This is a variable sliciding window
 ---------------------------------------------
 class Solution:
     def longestOnes(self, nums: List[int], k: int) -> int:
