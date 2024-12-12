@@ -1,9 +1,43 @@
 2024. Maximize the Confusion of an Exam :
 ----------------------------------------------
-TimeComplexity: O(n)
+TimeComplexity: O(N^2)
 ----------------------------------------------
-Code:
+Brute-Force Code:
+-------------------------------------------
+
+answerKey = "TTFTTFTT"
+k = 1
+max_answer = 0
+
+for i in range(len(answerKey)):
+    count_T = 0
+    count_F = 0
+    answ = 0
+    for j in range(i, len(answerKey)):
+        # Increment counts based on the character
+        if answerKey[j] == "T":
+            count_T += 1
+        else:
+            count_F += 1
+        
+        # Check if the flips required exceed `k`
+        if min(count_T, count_F) > k:
+            break
+        
+        # Update the window length
+        answ = j - i + 1
+
+    # Update the maximum consecutive answers
+    max_answer = max(answ, max_answer)
+
+print(max_answer)
+
+
+
+Main-Code:
 -----------------------------------------------
+Time-Complexity : O(N)
+---------------------------------------------
 class Solution:
     def maxConsecutiveAnswers(self, answerKey: str, k: int) -> int:
         l = 0
