@@ -3,6 +3,7 @@
 TimeComplexity: O(N^2)
 ------------------------------------------
 Brute-Force Code:
+-----------------------------------------
 # Example usage:
 def max_consecutive_ones(nums, k):
     n = len(nums)
