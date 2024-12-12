@@ -4,35 +4,68 @@ TimeComplexity: O(N^2)
 ------------------------------------------
 Brute-Force Code:
 -----------------------------------------
-# Example usage:
-def max_consecutive_ones(nums, k):
-    n = len(nums)
-    max_ones = 0
 
-    # Iterate through every possible starting point
-    for i in range(n):
-        flipped_zeros = 0
-        current_ones = 0
+# Example usage: 01 
+-------------------------
+  answerKey = [0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1]
+k = 3
+max_answer = 0
 
-        # Iterate through the array from the starting point
-        for j in range(i, n):
-            if nums[j] == 1:
-                current_ones += 1  # Count consecutive 1's
-            elif flipped_zeros < k:
-                flipped_zeros += 1
-                current_ones += 1  # Flip a 0 and count it as a 1
-            else:
-                break  # Stop when flipping more than k zeros
+for i in range(len(answerKey)):
+    count_1 = 0
+    count_0 = 0
+    answ = 0
+    for j in range(i, len(answerKey)):
+        # Increment counts based on the character
+        if answerKey[j] == 1:
+            count_1 += 1
+        else:
+            count_0 += 1
+        
+        # Check if the flips required exceed `k`
+        if (count_0) > k:
+            break
+        
+        # Update the window length
+        answ = j - i + 1
 
-        # Update the maximum consecutive ones
-        max_ones = max(max_ones, current_ones)
+    # Update the maximum consecutive answers
+    max_answer = max(answ, max_answer)
 
-    return max_ones
+print(max_answer)
 
-# Example usage:
-nums = [1,1,1,0,0,0,1,1,1,1,0]
-k = 2
-print("Maximum consecutive 1's:", max_consecutive_ones(nums, k))
+
+
+                                                                     # Example usage: 02 (Brute-Force Code)
+                                                                        -----------------------------------
+                                                                        def max_consecutive_ones(nums, k):
+                                                                            n = len(nums)
+                                                                            max_ones = 0
+                                                                        
+                                                                            # Iterate through every possible starting point
+                                                                            for i in range(n):
+                                                                                flipped_zeros = 0
+                                                                                current_ones = 0
+                                                                        
+                                                                                # Iterate through the array from the starting point
+                                                                                for j in range(i, n):
+                                                                                    if nums[j] == 1:
+                                                                                        current_ones += 1  # Count consecutive 1's
+                                                                                    elif flipped_zeros < k:
+                                                                                        flipped_zeros += 1
+                                                                                        current_ones += 1  # Flip a 0 and count it as a 1
+                                                                                    else:
+                                                                                        break  # Stop when flipping more than k zeros
+                                                                        
+                                                                                # Update the maximum consecutive ones
+                                                                                max_ones = max(max_ones, current_ones)
+                                                                        
+                                                                            return max_ones
+                                                                        
+                                                                        # Example usage:
+                                                                        nums = [1,1,1,0,0,0,1,1,1,1,0]
+                                                                        k = 2
+                                                                        print("Maximum consecutive 1's:", max_consecutive_ones(nums, k))
 
 
 
