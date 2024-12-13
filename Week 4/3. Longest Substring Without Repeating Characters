@@ -1,8 +1,36 @@
 3. Longest Substring Without Repeating Characters :
 ---------------------------------------------------------------
+Time-Complexity : O(N^2)
+-----------------------------------
+Brute-Force Code:
+------------------------------------
+
+s = "abcabcbb"
+
+# Variable to store the maximum length of substring
+max_ans = 0
+
+# Iterate through each starting position in the string
+for i in range(len(s)):
+    set_a = set()  # Set to store unique characters in the current substring
+    for j in range(i, len(s)):
+        # If the character is not in the set, add it
+        if s[j] not in set_a:
+            set_a.add(s[j])
+            # Calculate the length of the current substring
+            ans = j - i + 1
+            # Update the maximum length
+            max_ans = max(ans, max_ans)
+        else:
+            # Stop the inner loop if a duplicate character is found
+            break
+
+print(max_ans)
+
+
 TimeComplexity : O(n)
 -------------------------------------------------------
-Code:
+Main - Code:
 ----------------------------------------------------------
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
